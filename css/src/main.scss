@@ -6,6 +6,7 @@ $teal: #83BAB2;
 $green: #8B9E74;
 $red: #831528;
 $grey: #414042;
+$navy: #2D2E74;
 
 
 @import "reset";
@@ -23,10 +24,8 @@ $grey: #414042;
 // background-container
 .container {
 	background: white;
-	padding-bottom: 40px;
 
 	@include respond-to( 1220px ) {
-		padding-bottom: 20px;
 	}
 }
 
@@ -34,13 +33,21 @@ $grey: #414042;
 // header styles
 header {
 	position: relative;
-	background: url(../img/bg-header.jpg) center center no-repeat;
+	background: url(../img/bg-header.jpg) bottom center no-repeat;
 	background-size: cover;
-	padding: 25px 0;
-	border-bottom: 25px solid $red;
 
-	@include respond-to( 768px ) {
-		padding: 50px 0;
+	.wrap {		
+		padding: 40px 0;
+
+		@include respond-to( 768px ) {
+			padding: 140px 0 120px;
+		}
+	}
+
+	.car {
+		position: absolute;
+		right: 0;
+		bottom: 20px;
 	}
 }
 
@@ -68,17 +75,16 @@ header {
 // tool styles
 .tool {
 	padding: 0;
-	text-align: center;
 	
 	@include respond-to( 768px ) {
 		padding: 20px 40px;
 	}
 
 	.calculator {
-		background: url(../img/bg-box.png);
+		background: $navy;
 		color: white;
-		padding: 20px 15px 30px;
-		margin-top: 30px;
+		padding: 20px 15px 0;
+		margin: 30px 0;
 		@include font-title;
 
 		button, input[type=submit], .btn {
@@ -87,13 +93,13 @@ header {
 		}
 		
 		@include respond-to( 768px ) { 
-			padding: 30px 20px 40px; 
+			padding: 30px 20px 10px; 
 			border-radius: 20px;
 			font-size: 1.2em;
 		}
 
 		@include respond-to( 1024px ) {
-			padding: 40px;
+			padding: 40px 40px 10px;
 		}
 	}
 
@@ -112,12 +118,14 @@ header {
 .results {
 	display: none;
 	text-align: center;
+	background: url(../img/bg-results.png) bottom center no-repeat;
+	background-size: cover;
 	@extend .pad;
 
 	// large title
 	h2 {
 		@include font;
-		color: $red;
+		color: $navy;
 		font-size: 1.8em;
 
 		@include respond-to( 768px ) {
@@ -146,6 +154,10 @@ header {
 			padding: 50px 20px 10px;
 		}
 	}
+
+	.button-apply {
+		margin-top: 20px;
+	}
 }
 
 
@@ -154,53 +166,54 @@ header {
 .footer-bar {
 	border-top: 10px solid $grey;
 	color: $grey;
-	padding: 30px 20px;
+	padding: 10px 20px;
 	text-align: center;
-
-	h2, h4 {
-		&, a {
-			color: $red;
-		}
-
-		@include font-title;
-	}
-
-	h2 {
-		font-size: 3em;
-		@include respond-to( 768px ) { font-size: 3.5em; }
-	}
-
-	h4 {
-		font-size: 17px;
-		@include respond-to( 800px ) { font-size: 26px; }
-	}
+	position: relative;
 
 	.sixty, .fourty {
 		text-align: center;
 	}
 
-	@include respond-to( 768px ) {
-		margin-top: 30px;
-	}
-
 	.half.separator {
+		text-align: center;
 		@include respond-to( 768px ) {
 			width: 46.5%;
 		}
 	}
+
+	.half.phone-number {
+		padding: 20px 0;
+
+		@include respond-to( 768px ) {
+			padding: 40px 0;
+		}
+	}
+
+	.phone {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: none;
+
+		@include respond-to( 768px ) {
+			display: block;
+		}
+	}
+
+	@include respond-to( 768px ) {
+		padding: 20px 20px 20px 250px;
+	}
+
+	@include respond-to( 1220px ) {
+		padding: 20px 20px 20px 120px;
+	}
 }
 
 
-
 .fine-print {
-	padding: 20px 0 0;
-	font-size: .85em;
-	line-height: 1.3em;
+	font-size: .7em;
+	line-height: 1.2em;
 	text-align: left;
-
-	img {
-		float: right;
-		margin: 0 0 15px 15px;
-	}
+	padding: 10px;
 }
 
