@@ -80,6 +80,13 @@ header {
 		padding: 20px 40px;
 	}
 
+	h1 {
+		@include respond-to( 768px ) {
+			font-size: 32px;
+			line-height: 42px;
+		}
+	}
+
 	.calculator {
 		background: $navy;
 		color: white;
