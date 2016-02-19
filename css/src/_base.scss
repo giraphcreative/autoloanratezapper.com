@@ -88,7 +88,7 @@ select {
 }
 
 input[type=submit], button, .btn {
-	@include font-title;
+	@include font;
 	padding: 9px 35px 9px 12px;
 	background: $grey;
 	border: 3px solid white;

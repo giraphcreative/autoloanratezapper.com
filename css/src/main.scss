@@ -92,7 +92,7 @@ header {
 		color: white;
 		padding: 20px 15px 0;
 		margin: 30px 0;
-		@include font-title;
+		@include font;
 
 		button, input[type=submit], .btn {
 			width: 100%;
@@ -152,7 +152,7 @@ header {
 	}
 
 	p {
-		@include font-title;
+		@include font;
 		font-size: 1.5em;
 		line-height: 1.5em;
 
